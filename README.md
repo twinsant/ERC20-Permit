@@ -1,3 +1,13 @@
+**This project has NOT been audited, use at your own risk!**
+
+# A quick and dirty ERC20 token for Elon Musk
+
+> If I had a dollar for every time someone asked me if Trump is coming back on this platform, Twitter would be minting money!
+
+See [Original tweet](https://twitter.com/elonmusk/status/1587129795732770824).
+
+Which based on the following project:
+
 # ERC20-permit
 
 Package for implementing the ERC20 permit (EIP-2612). Unaudited, use at own risk.
