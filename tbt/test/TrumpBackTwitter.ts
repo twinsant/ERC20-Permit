@@ -3,6 +3,8 @@ import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
+const initialSupply = 230000000; // Twitter users
+
 describe("TrumpBackTwitter", function () {
   // We define a fixture to reuse the same setup in every test.
   // We use loadFixture to run this setup once, snapshot that state,
@@ -11,8 +13,6 @@ describe("TrumpBackTwitter", function () {
     // Contracts are deployed using the first signer/account by default
     const [owner, otherAccount] = await ethers.getSigners();
 
-    const initialSupply = 230000000; // Twitter users
-
     const TrumpBackTwitter = await ethers.getContractFactory("TrumpBackTwitter");
     const trumpBackTwitter = await TrumpBackTwitter.deploy(initialSupply);
 
@@ -20,10 +20,12 @@ describe("TrumpBackTwitter", function () {
   }
 
   describe("Deployment", function () {
-    it("Should set the right unlockTime", async function () {
+    it("Should set the right initialSupply", async function () {
       const { trumpBackTwitter } = await loadFixture(deploy);
 
-      expect(await trumpBackTwitter.unlockTime()).to.equal(unlockTime);
+      const total = await trumpBackTwitter.totalSupply();
+      console.log(total);
+      expect(total).to.equal(initialSupply);
     });
 
     it("Should set the right owner", async function () {

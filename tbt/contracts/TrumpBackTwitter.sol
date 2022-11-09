@@ -9,6 +9,7 @@ contract TrumpBackTwitter is ERC20Permit, Ownable {
     bytes32 private _merkleRoot;
 
     constructor (uint256 initialSupply) ERC20("Trump Back on Twitter", "TBT") {
+        _mint(msg.sender, initialSupply);
     }
 
     function claim(bytes32[] calldata merkleProof) public isValidMerkleProof(merkleProof, _merkleRoot) {
