@@ -7,6 +7,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["./typechain"],
-  "files": ["./hardhat.config.ts"]
+  // "include": ["./typechain"],
+  // "files": ["./hardhat.config.ts"]
 }
