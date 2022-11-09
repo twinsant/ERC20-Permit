@@ -25,6 +25,7 @@ contract TrumpBackTwitter is ERC20Permit, Ownable {
     }
 
     modifier isValidMerkleProof(bytes32[] calldata merkleProof, bytes32 root) {
+        // https://decentralizedthoughts.github.io/2020-12-22-what-is-a-merkle-tree/
         require(
             MerkleProof.verify(
                 merkleProof,
