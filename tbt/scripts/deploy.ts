@@ -3,8 +3,7 @@ import { ethers } from "hardhat";
 async function main() {
   const initialSupply = 230000000; // Twitter users
 
-  console.log(ethers);
-  const TrumpBackTwitter = await ethers.getContractFactory("TrumpBackTwitter");
+  const TrumpBackTwitter = await hre.ethers.getContractFactory("TrumpBackTwitter");
   const trumpBackTwitter = await TrumpBackTwitter.deploy(initialSupply);
 
   await trumpBackTwitter.deployed();

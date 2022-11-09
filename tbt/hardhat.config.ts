@@ -1,7 +1,9 @@
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
-// import '@typechain/hardhat'
-// import '@nomiclabs/hardhat-ethers'
+// import { HardhatUserConfig } from "hardhat/config";
+import "@nomiclabs/hardhat-ethers"
+import "@nomiclabs/hardhat-etherscan"
+import "hardhat-gas-reporter";
+import "solidity-coverage"
+import '@typechain/hardhat'
 // import "tsconfig-paths/register"
 
 const config: HardhatUserConfig = {
