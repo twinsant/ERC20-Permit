@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.0;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 import {IERC2612Permit} from "./IERC2612Permit.sol";
 
-import "@nomiclabs/buidler/console.sol";
+// import "@nomiclabs/buidler/console.sol";
 
 /**
  * @dev Extension of {ERC20} that allows token holders to use their tokens
@@ -144,7 +144,7 @@ abstract contract ERC20Permit is ERC20, IERC2612Permit {
         return _updateDomainSeparator();
     }
 
-    function _chainID() private pure returns (uint256) {
+    function _chainID() private view returns (uint256) {
         uint256 chainID;
         assembly {
             chainID := chainid()
