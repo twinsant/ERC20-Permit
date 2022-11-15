@@ -1,7 +1,10 @@
 import { time, loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
-import { expect } from "chai";
+import { chai, expect } from "chai";
+import { solidity } from "ethereum-waffle";
 import { ethers } from "hardhat";
+
+chai.use(solidity)
 
 const initialSupply = 230000000; // Twitter users
 
@@ -24,7 +27,6 @@ describe("TrumpBackTwitter", function () {
       const { trumpBackTwitter } = await loadFixture(deploy);
 
       const total = await trumpBackTwitter.totalSupply();
-      console.log(total);
       expect(total).to.equal(initialSupply);
     });
 
